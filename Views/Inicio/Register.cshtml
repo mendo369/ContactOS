@@ -1,0 +1,80 @@
+﻿@model AppContactos.Models.Usuario;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Register</title>
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    <link rel="stylesheet" href="~/css/Auth.css" asp-append-version="true" />
+
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="auth-form">
+            <div class="header-form">
+                Register
+            </div>
+            <div class="body-form">
+                <form asp-controller="Inicio" asp-action="Register" method="post" class="form">
+                    <input type="text" placeholder="Nombre completo" asp-for="NombreUsuario" required/>
+                    <input type="text" placeholder="Correo" asp-for="Correo" required/>
+                    <input type="password" placeholder="Contraseña" asp-for="Clave" required />
+
+                    @if (ViewData["Mensaje"] != null)
+                        {
+                                <div class="alert" role="alert">
+                                    @ViewData["Mensaje"]
+                                </div>
+                        }
+
+                    <button class="btn-submit" type="submit">Registrarse</button>
+                </form>
+                <div class="footer-form">
+                    ¿Ya tienes una cuenta? <a href="@Url.Action("Login", "Inicio")">Ingresa aquí</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    @*<div class="container mt-5 pt-5">
+        <div class="row justify-content-center">
+            <div class="card">
+                <div class="card-header">
+                    Registro
+                </div>
+                <div class="card-body">
+                    <form asp-controller="Inicio" asp-action="Register" method="post">
+                        <input class="form-control mb-3" type="text" placeholder="Nombre completo" asp-for="NombreUsuario" required/>
+                        <input class="form-control mb-3" type="text" placeholder="Correo" asp-for="Correo" required/>
+                        <input class="form-control mb-3" type="password" placeholder="Contraseña" asp-for="Clave" required />
+                        <div class="d-grid gap-2 mb-3">
+                            <button class="btn btn-primary" type="submit">Registrarse</button>
+                        </div>
+
+                        @if (ViewData["Mensaje"] != null)
+                        {
+                            <div class="form-group">
+                                <div class="alert alert-danger" role="alert">
+                                    @ViewData["Mensaje"]
+                                </div>
+                            </div>
+                        }
+                        ¿Ya tienes una cuenta? <a href="@Url.Action("Login", "Inicio")">Ingresa aquí</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
+</body>
+</html>

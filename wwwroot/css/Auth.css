@@ -1,0 +1,93 @@
+﻿body{
+    padding: 0;
+    margin: 0;
+    font-family: monospace;
+}
+
+.container {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    /*background-color: blueviolet;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-form {
+    width: fit-content;
+    height: fit-content;
+}
+
+.header-form {
+    background-color: rgb(255, 255, 255);
+    width: fit-content;
+    padding: 5px;
+    border-radius: 1px;
+    border-left: 2px solid blueviolet;
+    border-right: 2px solid blueviolet;
+    margin-bottom: -15px;
+    z-index: 10;
+    position: relative;
+    margin-left: 30px;
+    font-size: 15px;
+}
+
+.body-form {
+    border-radius: 8px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px blueviolet;
+    border: 2px solid blueviolet;
+    display: grid;
+    grid-auto-flow: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    margin: 10px;
+    display: grid;
+    grid-auto-flow: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.form input{
+    outline: none;
+    width: 90%;
+    margin: auto;
+    padding: 5px;
+    text-align: center;
+}
+
+.btn-submit{
+    border: none;
+    background-color: blueviolet;
+    color: white;
+    width: fit-content;
+    padding: 5px;
+    border-radius: 3px;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+.alert{
+    background-color: red;
+    color: white;
+    border-radius: 3px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.footer-form{
+   text-align: center;
+}
+
+.footer-form a{
+    text-decoration: none;
+    font-weight: bold;
+}
