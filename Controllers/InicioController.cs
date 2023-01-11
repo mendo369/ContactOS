@@ -25,11 +25,11 @@ namespace AppContactos.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(Usuario usuario)
+        public async Task<IActionResult> Register(User usuario)
         {
-            usuario.Clave = Utilidades.Encrypt(usuario.Clave);
+            usuario.Password = Utilidades.Encrypt(usuario.Password);
 
-            Usuario usuarioCreado = await _usuarioService.SaveUsuario(usuario);
+            User usuarioCreado = await _usuarioService.SaveUsuario(usuario);
 
             if (usuarioCreado.Id > 0)
             {
@@ -49,7 +49,7 @@ namespace AppContactos.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(string correo, string clave)
         {
-            Usuario usuarioEncontrado = await _usuarioService.GetUsuario(correo, Utilidades.Encrypt(clave));
+            User usuarioEncontrado = await _usuarioService.GetUsuario(correo, Utilidades.Encrypt(clave));
 
             if (usuarioEncontrado == null)
             {
@@ -60,7 +60,7 @@ namespace AppContactos.Controllers
             //creamos un objeto que almacene la informacion de nuestro usuario
             List<Claim> claims = new List<Claim>()
             {
-                new Claim(ClaimTypes.Name, usuarioEncontrado.NombreUsuario)
+                new Claim(ClaimTypes.Name, usuarioEncontrado.UserName)
             };
 
             ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);

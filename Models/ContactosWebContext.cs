@@ -15,29 +15,115 @@ public partial class ContactosWebContext : DbContext
     {
     }
 
-    public virtual DbSet<Usuario> Usuarios { get; set; }
+    public virtual DbSet<Contact> Contacts { get; set; }
+
+    public virtual DbSet<ImportantDate> ImportantDates { get; set; }
+
+    public virtual DbSet<Note> Notes { get; set; }
+
+    public virtual DbSet<User> Users { get; set; }
+
+    public virtual DbSet<UserContact> UserContacts { get; set; }
+
+    public virtual DbSet<UserDate> UserDates { get; set; }
+
+    public virtual DbSet<UserNote> UserNotes { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { }
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-//        => optionsBuilder.UseSqlServer("Server=(local); DataBase=ContactosWeb; Trusted_Connection=True; TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Usuario>(entity =>
+        modelBuilder.Entity<Contact>(entity =>
+        {
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Address)
+                .HasMaxLength(150)
+                .IsUnicode(false);
+            entity.Property(e => e.Email)
+                .HasMaxLength(150)
+                .IsUnicode(false);
+            entity.Property(e => e.Name)
+                .HasMaxLength(80)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<ImportantDate>(entity =>
+        {
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Description)
+                .HasMaxLength(100)
+                .IsUnicode(false);
+            entity.Property(e => e.Month)
+                .HasMaxLength(5)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<Note>(entity =>
+        {
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.NoteContent)
+                .HasMaxLength(200)
+                .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<User>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__USUARIO__3214EC071DEAA580");
 
-            entity.ToTable("USUARIO");
-
-            entity.Property(e => e.Clave)
-                .HasMaxLength(150)
-                .IsUnicode(false);
-            entity.Property(e => e.Correo)
+            entity.Property(e => e.Email)
                 .HasMaxLength(80)
                 .IsUnicode(false);
-            entity.Property(e => e.NombreUsuario)
+            entity.Property(e => e.Password)
+                .HasMaxLength(150)
+                .IsUnicode(false);
+            entity.Property(e => e.UserName)
                 .HasMaxLength(50)
                 .IsUnicode(false);
+        });
+
+        modelBuilder.Entity<UserContact>(entity =>
+        {
+            entity.Property(e => e.Id).ValueGeneratedNever();
+
+            entity.HasOne(d => d.IdContactNavigation).WithMany(p => p.UserContacts)
+                .HasForeignKey(d => d.IdContact)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_UserContacts_Contacts");
+
+            entity.HasOne(d => d.IdUserNavigation).WithMany(p => p.UserContacts)
+                .HasForeignKey(d => d.IdUser)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_UserContacts_Users");
+        });
+
+        modelBuilder.Entity<UserDate>(entity =>
+        {
+            entity.Property(e => e.Id).ValueGeneratedNever();
+
+            entity.HasOne(d => d.IdDateNavigation).WithMany(p => p.UserDates)
+                .HasForeignKey(d => d.IdDate)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_UserDates_ImportantDates");
+
+            entity.HasOne(d => d.IdUserNavigation).WithMany(p => p.UserDates)
+                .HasForeignKey(d => d.IdUser)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_UserDates_Users");
+        });
+
+        modelBuilder.Entity<UserNote>(entity =>
+        {
+            entity.Property(e => e.Id).ValueGeneratedNever();
+
+            entity.HasOne(d => d.IdNoteNavigation).WithMany(p => p.UserNotes)
+                .HasForeignKey(d => d.IdNote)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_UserNotes_Notes");
+
+            entity.HasOne(d => d.IdUserNavigation).WithMany(p => p.UserNotes)
+                .HasForeignKey(d => d.IdUser)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_UserNotes_Users");
         });
 
         OnModelCreatingPartial(modelBuilder);

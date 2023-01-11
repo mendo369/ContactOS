@@ -5,7 +5,7 @@ namespace AppContactos.Servicios.Contrato
 {
     public interface IUsuarioService
     {
-        Task<Usuario> GetUsuario(string correo, string clave);
-        Task<Usuario> SaveUsuario(Usuario usuario);
+        Task<User> GetUsuario(string correo, string clave);
+        Task<User> SaveUsuario(User usuario);
     }
 }
