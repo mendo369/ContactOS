@@ -13,11 +13,13 @@
         <nav class="navbar">
             <div class="nav-item app-name"><h1>ContactOS</h1></div>
             <div class="nav-item user-info">
-                <div class="profile">@ViewData["NombreUsuario"].ToString().ToUpper()[0]</div>
+                @*<div class="profile">@ViewData["NombreUsuario"].ToString().ToUpper()[0]</div>*@
+                <div class="profile">L</div>
                 @ViewData["NombreUsuario"]
             </div>
             <div class="nav-item menu">
             <div class="add-user"><a asp-area="" asp-controller="Home" asp-action="CerrarSesion"><img src="~/Images/AddUser.svg"/></a></div>
+            <div class="add-user"><a asp-area="" asp-controller="Note" asp-action="SaveNote"><img src="~/Images/AddNote.svg"/></a></div>
             <div class="add-user"><a asp-area="" asp-controller="Home" asp-action="CerrarSesion"><img src="~/Images/AddDate.svg"/></a></div>
             <div class="close-session"><a asp-area="" asp-controller="Home" asp-action="CerrarSesion"><img src="~/Images/Exit.svg"/></a></div>
             </div>

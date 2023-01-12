@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "fEj4AfDkzoVH7FF1mGxNyNYiH4ZO4Cj+5A1kj5nrKxY=",
+  "Hash": "L6xlS8lDiBaTVQTFDAGqI/rEX9wrwRGRaiYLsS/Zglg=",
   "Source": "AppContactos",
   "BasePath": "_content/AppContactos",
   "Mode": "Default",
@@ -100,6 +100,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Proyectos_CV\\AppContactos\\wwwroot\\Images\\AddDate.svg",
+      "SourceId": "AppContactos",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Proyectos_CV\\AppContactos\\wwwroot\\",
+      "BasePath": "_content/AppContactos",
+      "RelativePath": "Images/AddDate.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\AddDate.svg"
+    },
+    {
+      "Identity": "C:\\Proyectos_CV\\AppContactos\\wwwroot\\Images\\AddNote.svg",
+      "SourceId": "AppContactos",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Proyectos_CV\\AppContactos\\wwwroot\\",
+      "BasePath": "_content/AppContactos",
+      "RelativePath": "Images/AddNote.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\AddNote.svg"
     },
     {
       "Identity": "C:\\Proyectos_CV\\AppContactos\\wwwroot\\Images\\AddUser.svg",

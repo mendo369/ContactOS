@@ -56,6 +56,11 @@ body {
     margin: auto;
 }
 
+.navbar .menu{
+    display: grid;
+    grid-auto-flow: column;
+}
+
 .container-home{
     display: grid;
     grid-template-columns: 1fr 50vw 1fr;
@@ -77,12 +82,41 @@ body {
     border-right: 1px dashed black;
 }
 
+    .notes{
+        list-style-type: disc;
+    }
+
     .note-home{
         width: 80%;
         margin: 1em auto;
         background-color: antiquewhite;
         border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .body-note {
         padding: 3px 5px;
+        cursor: pointer;
+    }
+
+    .options-note{
+        /*transition: all 5s ease-in-out;*/
+        padding: 3px 5px;
+        background-color: darkorange;
+        display: grid;
+        grid-auto-flow: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10%;
+        display: none;
+    }
+
+    .options-note a{
+        text-decoration: none;
+    }
+
+    .note-home:hover .options-note{
+        display: grid;
     }
 
 .list-contacts-home {

@@ -1,0 +1,30 @@
+﻿@model AppContactos.Models.Note;
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Note";
+}
+
+<div class="container">
+    <div class="note-form">
+        <div class="header-form">
+            
+        </div>
+        <div class="body-form">
+            <form asp-controller="Note" asp-action="SaveNote" method="post" class="form">
+                <input type="text" placeholder="" asp-for="NoteContent" required />
+                <textarea placeholder="" asp-for="NoteContent"></textarea>
+
+                @*@if (ViewData["Mensaje"] != null)
+                {
+                    <div class="alert" role="alert">
+                        @ViewData["Mensaje"]
+                    </div>
+                }*@
+
+                <button class="btn-submit" type="submit">Guardar</button>
+            </form>
+        </div>
+
+    </div>
+</div>
