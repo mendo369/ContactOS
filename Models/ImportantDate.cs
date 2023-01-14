@@ -13,5 +13,7 @@ public partial class ImportantDate
 
     public string? Description { get; set; }
 
-    public virtual ICollection<UserDate> UserDates { get; } = new List<UserDate>();
+    public int IdUser { get; set; }
+
+    public virtual User IdUserNavigation { get; set; } = null!;
 }

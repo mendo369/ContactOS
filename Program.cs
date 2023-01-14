@@ -19,6 +19,7 @@ builder.Services.AddDbContext<ContactosWebContext>(options =>
 });
 
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+builder.Services.AddScoped<INoteService, NoteService>();
 
 //configuramos la autentificacion
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)

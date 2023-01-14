@@ -7,7 +7,9 @@ public partial class Note
 {
     public int Id { get; set; }
 
-    public string? NoteContent { get; set; }
+    public string NoteContent { get; set; } = null!;
 
-    public virtual ICollection<UserNote> UserNotes { get; } = new List<UserNote>();
+    public int IdUser { get; set; }
+
+    public virtual User IdUserNavigation { get; set; } = null!;
 }

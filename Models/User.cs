@@ -15,9 +15,9 @@ public partial class User
 
     public string? Password { get; set; }
 
-    public virtual ICollection<UserContact> UserContacts { get; } = new List<UserContact>();
+    public virtual ICollection<Contact> Contacts { get; } = new List<Contact>();
 
-    public virtual ICollection<UserDate> UserDates { get; } = new List<UserDate>();
+    public virtual ICollection<ImportantDate> ImportantDates { get; } = new List<ImportantDate>();
 
-    public virtual ICollection<UserNote> UserNotes { get; } = new List<UserNote>();
+    public virtual ICollection<Note> Notes { get; } = new List<Note>();
 }

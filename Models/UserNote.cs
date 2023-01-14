@@ -10,8 +10,4 @@ public partial class UserNote
     public int IdUser { get; set; }
 
     public int IdNote { get; set; }
-
-    public virtual Note IdNoteNavigation { get; set; } = null!;
-
-    public virtual User IdUserNavigation { get; set; } = null!;
 }

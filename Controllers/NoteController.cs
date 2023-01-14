@@ -20,7 +20,19 @@ namespace AppContactos.Controllers
         }
 
         [HttpPost]
+        public async Task<IActionResult> SaveNote(Note note)
+        {
+            bool noteCreated = await _noteService.SaveNote(note);
 
+            if (noteCreated)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            ViewData["Mensaje"] = "Error. Por favor intente de nuevo";
+
+            return View();
+        }
         
         public IActionResult DetailsNote()
         {
