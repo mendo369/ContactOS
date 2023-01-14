@@ -60,7 +60,8 @@ namespace AppContactos.Controllers
             //creamos un objeto que almacene la informacion de nuestro usuario
             List<Claim> claims = new List<Claim>()
             {
-                new Claim(ClaimTypes.Name, usuarioEncontrado.UserName)
+                new Claim(ClaimTypes.Name, usuarioEncontrado.UserName),
+                new Claim(ClaimTypes.SerialNumber, usuarioEncontrado.Id.ToString())
             };
 
             ClaimsIdentity claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);

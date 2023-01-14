@@ -1,4 +1,4 @@
-﻿@model AppContactos.Models.Usuario;
+﻿@model AppContactos.Models.User;
 @{
     Layout = null;
 }
@@ -23,9 +23,10 @@
             </div>
             <div class="body-form">
                 <form asp-controller="Inicio" asp-action="Register" method="post" class="form">
-                    <input type="text" placeholder="Nombre completo" asp-for="NombreUsuario" required/>
-                    <input type="text" placeholder="Correo" asp-for="Correo" required/>
-                    <input type="password" placeholder="Contraseña" asp-for="Clave" required />
+                    <input type="text" placeholder="Name" asp-for="UserName" required/>
+                    <input type="text" placeholder="Email" asp-for="Email" required/>
+                    <input type="number" placeholder="Phone" asp-for="Phone" required/>
+                    <input type="password" placeholder="Password" asp-for="Password" required />
 
                     @if (ViewData["Mensaje"] != null)
                         {
