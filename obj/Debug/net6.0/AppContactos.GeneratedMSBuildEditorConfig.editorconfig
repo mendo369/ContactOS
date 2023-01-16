@@ -31,6 +31,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5pY2lvXFJlZ2lzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Proyectos_CV/AppContactos/Views/Note/GetAllNotes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90ZVxHZXRBbGxOb3Rlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Proyectos_CV/AppContactos/Views/Note/SaveNote.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTm90ZVxTYXZlTm90ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

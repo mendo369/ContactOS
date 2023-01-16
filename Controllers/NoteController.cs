@@ -16,6 +16,11 @@ namespace AppContactos.Controllers
             _noteService = noteService;
         }
 
+        public IActionResult GetAllNotes()
+        {
+            return View();
+        }
+
         public IActionResult SaveNote()
         {
             return View();

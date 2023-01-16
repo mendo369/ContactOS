@@ -6,7 +6,10 @@
     <section class="notes-home">
         <h2 class="title-section">Notas</h2>
 
-        <ul class="notes">
+        @*@{Html.RenderAction("GetAllNotes","Note");}*@
+        @await Html.PartialAsync("~/Views/Note/GetAllNotes.cshtml")
+
+        @*<ul class="notes">
             <li class="note-home">
                 <div class="body-note">
                     this is a test note for device the styles has been aplied at the notes
@@ -16,34 +19,7 @@
                     <a href="#">Eliminar</a>
                 </div>
             </li>
-            <li class="note-home">
-                <div class="body-note">
-                    this is a test note for device the styles has been aplied at the notes
-                </div>
-                <div class="options-note">
-                    <a href="#">Editar</a>
-                    <a href="#">Eliminar</a>
-                </div>
-            </li>
-            <li class="note-home">
-                <div class="body-note">
-                    this is a test note for device the styles has been aplied at the notes
-                </div>
-                <div class="options-note">
-                    <a href="#">Editar</a>
-                    <a href="#">Eliminar</a>
-                </div>
-            </li>
-            <li class="note-home">
-                <div class="body-note">
-                    this is a test note for device the styles has been aplied at the notes
-                </div>
-                <div class="options-note">
-                    <a href="#">Editar</a>
-                    <a href="#">Eliminar</a>
-                </div>
-            </li>
-        </ul>
+        </ul>*@
         
     </section>
 
