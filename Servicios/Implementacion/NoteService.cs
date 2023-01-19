@@ -23,7 +23,7 @@ namespace AppContactos.Servicios.Implementacion
             return await _dbContext.SaveChangesAsync() > 0;
         }
 
-        public async Task<IEnumerable<Note>> GetAllNotes()
+        public async Task<List<Note>> GetAllNotes()
         {
             return await _dbContext.Notes.ToListAsync();
         }

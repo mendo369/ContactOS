@@ -1,0 +1,25 @@
+﻿@model IEnumerable<AppContactos.Models.Contact>
+
+@{
+    ViewData["Title"] = "Contacts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="list-contacts-home">
+    <div class="header-section-view">
+        <h2 class="title-section">Contacts list</h2>
+        <div class="add-user"><a asp-controller="Contacts" asp-action="Create"><img src="~/Images/AddContact.svg" /></a></div>
+    </div>
+
+    <ul class="contacts">
+        @foreach (var contact in Model)
+        {
+
+            <li class="contact-home">
+                <div class="contact-profile">@Html.DisplayFor(modelContact => contact.Name.ToUpper()[0])</div>
+                <div class="contact-name">@Html.DisplayFor(modelContact => contact.Name)</div>
+            </li>
+        }
+    </ul>
+
+</section>

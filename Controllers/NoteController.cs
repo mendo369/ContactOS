@@ -16,9 +16,10 @@ namespace AppContactos.Controllers
             _noteService = noteService;
         }
 
-        public IActionResult GetAllNotes()
+        public async Task<IActionResult> GetAllNotes()
         {
-            return View();
+            var notes = await _noteService.GetAllNotes();
+            return PartialView(notes);
         }
 
         public IActionResult SaveNote()

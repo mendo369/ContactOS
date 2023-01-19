@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "L6xlS8lDiBaTVQTFDAGqI/rEX9wrwRGRaiYLsS/Zglg=",
+  "Hash": "LLDC713Pwg39lponh95jKkBWeRnb8hd/UzXx23tLQZg=",
   "Source": "AppContactos",
   "BasePath": "_content/AppContactos",
   "Mode": "Default",
@@ -102,6 +102,23 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Proyectos_CV\\AppContactos\\wwwroot\\Images\\AddContact.svg",
+      "SourceId": "AppContactos",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Proyectos_CV\\AppContactos\\wwwroot\\",
+      "BasePath": "_content/AppContactos",
+      "RelativePath": "Images/AddContact.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\AddContact.svg"
+    },
+    {
       "Identity": "C:\\Proyectos_CV\\AppContactos\\wwwroot\\Images\\AddDate.svg",
       "SourceId": "AppContactos",
       "SourceType": "Discovered",
@@ -134,23 +151,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\AddNote.svg"
-    },
-    {
-      "Identity": "C:\\Proyectos_CV\\AppContactos\\wwwroot\\Images\\AddUser.svg",
-      "SourceId": "AppContactos",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Proyectos_CV\\AppContactos\\wwwroot\\",
-      "BasePath": "_content/AppContactos",
-      "RelativePath": "Images/AddUser.svg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\AddUser.svg"
     },
     {
       "Identity": "C:\\Proyectos_CV\\AppContactos\\wwwroot\\Images\\Exit.svg",

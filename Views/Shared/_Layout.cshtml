@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AppContactos.styles.css" asp-append-version="true" />
 </head>
-<body>
+<body> 
     <header>
         <nav class="navbar">
             <div class="nav-item app-name"><h1>ContactOS</h1></div>
@@ -18,15 +18,22 @@
                 @ViewData["NombreUsuario"]
             </div>
             <div class="nav-item menu">
-            <div class="add-user"><a asp-area="" asp-controller="Home" asp-action="CerrarSesion"><img src="~/Images/AddUser.svg"/></a></div>
-            <div class="add-user"><a asp-area="" asp-controller="Note" asp-action="SaveNote"><img src="~/Images/AddNote.svg"/></a></div>
-            <div class="add-user"><a asp-area="" asp-controller="Home" asp-action="CerrarSesion"><img src="~/Images/AddDate.svg"/></a></div>
+            @*<div class="add-user"><a asp-area="" asp-controller="Notes" asp-action="Create"><img src="~/Images/AddNote.svg"/></a></div>
+            <div class="add-user"><a asp-area="" asp-controller="Contacts" asp-action="Create"><img src="~/Images/AddContact.svg"/></a></div>
+            <div class="add-user"><a asp-area="" asp-controller="ImportantDates" asp-action="Create"><img src="~/Images/AddDate.svg"/></a></div>*@
             <div class="close-session"><a asp-area="" asp-controller="Home" asp-action="CerrarSesion"><img src="~/Images/Exit.svg"/></a></div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div class="principal-container">
+        <main role="main">
+            <div class="views-menu">
+                <ul>
+                    <li><a asp-controller="Notes" asp-action="Index" >Notes</a></li>
+                    <li><a asp-controller="Contacts" asp-action="Index" >Contacts</a></li>
+                    <li><a asp-controller="ImportantDates" asp-action="Index" >Dates</a></li>
+                </ul>
+            </div>
             @RenderBody()
             @*@RenderSection("Notas")*@
         </main>

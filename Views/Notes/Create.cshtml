@@ -1,0 +1,33 @@
+﻿@model AppContactos.Models.Note
+
+@{
+    ViewData["Title"] = "Add Note";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="note-form">
+    <div class="header-form">
+        Add Note
+    </div>
+    <div class="body-form">
+        <form asp-action="Create" class="form">
+            @*<input type="text" asp-for="NoteContent" placeholder="Descripción de la nota" required/>*@
+            <textarea placeholder="Content" asp-for="NoteContent" required></textarea>
+
+            @if (ViewData["Mensaje"] != null)
+            {
+            <div class="alert" role="alert">
+            @ViewData["Mensaje"]
+            </div>
+            }
+
+            <div class="buttons">
+                <button class="btn-submit" type="submit">Save</button>
+                <button class="btn-submit"><a asp-action="Index">Cancel</a></button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+

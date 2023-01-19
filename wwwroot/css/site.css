@@ -28,6 +28,10 @@ button{
     cursor: pointer;
 }
 
+input{
+    outline: none;
+}
+
 .navbar{
     width: 100%;
     min-height: 15vh;
@@ -65,14 +69,58 @@ button{
     grid-auto-flow: column;
 }
 
-.container-home{
-    display: grid;
-    grid-template-columns: 1fr 50vw 1fr;
-    width: 100vw;
+.principal-container{
+    min-height: 85vh;
+    max-height: 85vh;
+    width: 80vw;
     margin: auto;
-    align-items: start;
-    justify-content: space-between;
 }
+
+.principal-container main .views-menu{
+    width: 100%;
+    margin-top: 10px;
+}
+
+    .principal-container main .views-menu ul {
+        list-style-type: none;
+        display: grid;
+        grid-auto-flow: column;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 0 10%;
+    }
+
+    .views-menu ul a{
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+
+    .container-home {
+        display: grid;
+        grid-template-columns: 1fr 50vw 1fr;
+        width: 100vw;
+        margin: auto;
+        align-items: start;
+        justify-content: space-between;
+    }
+
+.header-section-view{
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 50%;
+    margin: auto;
+}
+
+    .header-section-view div{
+        z-index: 1;
+        position: absolute;
+        right: 0;
+        top: 0%;
+    }
 
 .title-section{
     text-align: center;
@@ -81,9 +129,6 @@ button{
 
 .notes-home {
     padding-top: 1em;
-    min-height: 85vh;
-    max-height: 85vh;
-    border-right: 1px dashed black;
 }
 
     .notes{
@@ -91,7 +136,7 @@ button{
     }
 
     .note-home{
-        width: 80%;
+        width: 40%;
         margin: 1em auto;
         background-color: antiquewhite;
         border-radius: 10px;
@@ -99,7 +144,7 @@ button{
     }
 
     .body-note {
-        padding: 3px 5px;
+        padding: 5px;
         cursor: pointer;
     }
 
@@ -156,7 +201,7 @@ button{
             border-radius: 10px;
         }
 
-        .note-form .body-form .buttons{
+        .note-form .body-form .buttons, .buttons{
             padding: 5px 3px;
             display: grid;
             grid-auto-flow: column;
@@ -165,7 +210,7 @@ button{
             justify-content: center;
         }
 
-            .note-form .body-form .buttons button{
+            .note-form .body-form .buttons button, .buttons button{
                 border: none;
                 background-color: rgba(255,255,255, 0.6);
                 padding: 2px;
@@ -193,7 +238,40 @@ button{
         gap: 10px;
     }
 
-        .contact-home .contact-profile {
+    .contact-form {
+        width: 30vw;
+        height: fit-content;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        box-shadow: 0px 0px 5px rgb(169, 167, 167);
+        border-radius: 10px;
+        padding: 5px;
+    }
+
+        .contact-form .body-form .form section{
+            display: grid;
+            grid-template-columns: 30% 1fr;
+            align-items: center;
+        }
+
+        .content-contact-form{
+            display: grid;
+            grid-auto-flow: row;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .content-contact-form .form-group{
+            display: grid;
+            gap: 5px;
+            grid-auto-flow: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .contact-home .contact-profile, .contact-profile {
             width: 50px;
             height: 50px;
             background-color: blueviolet;

@@ -4,7 +4,7 @@ namespace AppContactos.Servicios.Contrato
 {
     public interface INoteService
     {
-        Task<IEnumerable<Note>> GetAllNotes();
+        Task<List<Note>> GetAllNotes();
         Task<Note> GetNoteDetails(int id);
         Task<bool> InsertNote(Note note);
         Task<bool> UpdateNote(Note note);
