@@ -1,67 +1,122 @@
-<section>
-  <form [formGroup]="formRegister" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="name">Nombre:</label>
-      <input
-        type="text"
-        id="name"
-        formControlName="name"
-        class="form-control"
-      />
-      <div
-        *ngIf="
-          formRegister.get('name')?.invalid &&
-          (formRegister.get('name')?.dirty || formRegister.get('name')?.touched)
-        "
-      >
-        <div *ngIf="formRegister.get('name')?.errors?.['required']">
-          El nombre es obligatorio.
+<section class="register">
+  <div class="head">
+    <h1>ContactOS Register</h1>
+    <p>Hola, registrate para empezar a gurdar tus contactos</p>
+  </div>
+  <div class="form">
+    <form [formGroup]="formRegister" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input
+          type="text"
+          id="name"
+          formControlName="name"
+          class="form-control"
+          placeholder="John"
+        />
+        <div
+          *ngIf="
+            formRegister.get('name')?.invalid &&
+            (formRegister.get('name')?.dirty ||
+              formRegister.get('name')?.touched)
+          "
+        >
+          <div *ngIf="formRegister.get('name')?.errors?.['required']">
+            El nombre es obligatorio.
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="form-group">
-      <label for="lastName">Apellido:</label>
-      <input
-        type="text"
-        id="lastName"
-        formControlName="lastName"
-        class="form-control"
-      />
-    </div>
+      <div class="form-group">
+        <label for="lastName">Apellido</label>
+        <input
+          type="text"
+          id="lastName"
+          formControlName="lastName"
+          class="form-control"
+          placeholder="Doe"
+        />
+      </div>
+      <div class="form-group">
+        <label for="phone">Teléfono</label>
+        <input
+          type="tel"
+          id="phone"
+          formControlName="phone"
+          class="form-control"
+          placeholder="3000000000"
+        />
+      </div>
 
-    <div class="form-group">
-      <label for="phone">Teléfono:</label>
-      <input
-        type="tel"
-        id="phone"
-        formControlName="phone"
-        class="form-control"
-      />
-    </div>
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          class="form-control"
+          placeholder="******"
+        />
+      </div>
 
-    <div class="form-group">
-      <label for="password">Contraseña:</label>
-      <input
-        type="password"
-        id="password"
-        formControlName="password"
-        class="form-control"
-      />
-    </div>
-
-    <button type="submit" [disabled]="formRegister.invalid">Registrarse</button>
-  </form>
+      <button type="submit" [disabled]="formRegister.invalid">
+        Registrarse
+      </button>
+    </form>
+  </div>
   <div class="footer">
-    <a routerLink="/auth/login">Login</a>
+    <a routerLink="/auth/login">-- Login --</a>
   </div>
 </section>
 
 <style>
+  .register {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+
+  .head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+  }
+
   form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1em;
+    gap: 10px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+  }
+
+  .form-control {
+    border: 1px solid var(--gray-color);
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  button {
+    margin-top: 1em;
+    background-color: var(--yellow-color);
+    border: none;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: medium;
+    letter-spacing: 1px;
+    cursor: pointer;
   }
 </style>

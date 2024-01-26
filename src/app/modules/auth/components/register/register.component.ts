@@ -21,7 +21,8 @@ export class RegisterComponent {
   }
 
   async onSubmit() {
-    alert('hola');
-    // const response = await this.authService.register(this.form.value);
+    const response = await this.authService.register(this.formRegister.value);
+
+    console.warn(response);
   }
 }

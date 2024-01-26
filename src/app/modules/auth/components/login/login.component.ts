@@ -18,7 +18,8 @@ export class LoginComponent {
   }
 
   async onSubmit() {
-    alert('hola');
-    // const response = await this.authService.register(this.form.value);
+    const response = await this.authService.login(this.formLogin.value);
+
+    console.warn(response);
   }
 }

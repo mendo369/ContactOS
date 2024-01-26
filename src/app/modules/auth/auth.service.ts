@@ -17,4 +17,9 @@ export class AuthService {
       this.http.post<any>(`${this.baseUrl}/register`, formValue)
     );
   }
+  login(formValue: any) {
+    return firstValueFrom(
+      this.http.post<any>(`${this.baseUrl}/login`, formValue)
+    );
+  }
 }
