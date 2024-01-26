@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 
 @Injectable({
@@ -8,7 +9,7 @@ import { firstValueFrom } from 'rxjs';
 export class AuthService {
   private baseUrl: string;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     this.baseUrl = 'http://localhost:5035/api/Auth';
   }
 
@@ -30,7 +31,8 @@ export class AuthService {
     ).then((res) => {
       if (res.status) {
         localStorage.setItem('user', JSON.stringify(res.value));
-        return true;
+
+        this.router.navigate(['/']);
       }
       return false;
     });
