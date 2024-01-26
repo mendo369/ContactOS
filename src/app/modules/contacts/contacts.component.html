@@ -1,3 +1,59 @@
-<ul>
-  <li *ngFor="let contact of contacts">{{ contact.name }}</li>
-</ul>
+<section class="contacts">
+  <div class="add-contact">
+    <button>Añadir Contacto</button>
+  </div>
+  <ul class="contacts-list">
+    <li *ngFor="let contact of contacts">
+      <div class="contact">
+        <div class="contact-name">
+          <p>
+            <span>{{ contact.name }}</span
+            >{{ " " }}<span>{{ contact.lastname }}</span>
+          </p>
+        </div>
+        <div class="contact-info">
+          <div class="phone">{{ contact.phone }}</div>
+          <div class="email">{{ contact.email }}</div>
+          <div class="address">{{ contact.address }}</div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<style>
+  .add-contact button {
+    border-radius: 3px;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .contacts-list {
+    margin-top: 1em;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .contact-name {
+    background-color: var(--yellow-color);
+    padding: 5px;
+    text-align: center;
+    border-radius: 3px;
+  }
+
+  .contact-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+</style>
