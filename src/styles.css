@@ -1,13 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 :root {
   --yellow-color: #f4c62c;
   --gray-color: #ebe9e0;
-  --white-color: #f4f5f5;
+  --white-color: #f5f8f8;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
+}
+
+input {
+  outline: none;
 }
