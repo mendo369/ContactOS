@@ -2,4 +2,12 @@
 
 :root {
   --yellow-color: #f4c62c;
+  --gray-color: #ebe9e0;
+  --white-color: #f4f5f5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
