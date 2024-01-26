@@ -8,11 +8,16 @@ import { NotesService } from './notes.service';
 })
 export class NotesComponent {
   notes: any[] = [];
+  addNote = false;
 
   constructor(private notesService: NotesService) {}
 
   ngOnInit(): void {
     this.getNotes();
+  }
+
+  displayAddNote() {
+    this.addNote = !this.addNote;
   }
 
   getNotes() {
