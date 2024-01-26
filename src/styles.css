@@ -22,6 +22,15 @@ a {
   color: initial;
 }
 
-input {
+input,
+textarea {
   outline: none;
+}
+
+button {
+  background-color: var(--yellow-color);
+  border-radius: 3px;
+  padding: 5px;
+  border: none;
+  cursor: pointer;
 }
