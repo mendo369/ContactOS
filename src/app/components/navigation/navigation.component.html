@@ -1,8 +1,14 @@
 <section class="navigation-bar">
   <ul class="navigation-list">
-    <li class="navigation-item"><a routerLink="/notes">Notas</a></li>
-    <li class="navigation-item"><a routerLink="/contacts">Contactos</a></li>
-    <li class="navigation-item"><a routerLink="/dates">Fechas</a></li>
+    <li class="navigation-item">
+      <a routerLink="/notes" routerLinkActive="link-active">Notas</a>
+    </li>
+    <li class="navigation-item">
+      <a routerLink="/contacts" routerLinkActive="link-active">Contactos</a>
+    </li>
+    <li class="navigation-item">
+      <a routerLink="/dates" routerLinkActive="link-active">Fechas</a>
+    </li>
   </ul>
 </section>
 
@@ -13,5 +19,10 @@
     align-items: center;
     justify-content: space-around;
     margin: 1em 0;
+  }
+
+  .link-active {
+    border-bottom: 2px solid var(--yellow-color);
+    font-weight: 400;
   }
 </style>
