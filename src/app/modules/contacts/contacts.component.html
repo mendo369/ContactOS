@@ -1,6 +1,33 @@
 <section class="contacts">
   <div class="add-contact">
-    <button>Añadir Contacto</button>
+    <button (click)="displayAddContact()">Añadir contacto</button>
+  </div>
+  <div class="new-note" *ngIf="addContact">
+    <form [formGroup]="formContact" (ngSubmit)="onSaveContact()">
+      <div class="form-group">
+        <label for="title">Nombre</label>
+        <input type="text" name="name" formControlName="name" />
+      </div>
+      <div class="form-group">
+        <label for="title">Apellido</label>
+        <input type="text" name="lastname" formControlName="lastname" />
+      </div>
+      <div class="form-group">
+        <label for="title">Celular</label>
+        <input type="text" name="phone" formControlName="phone" />
+      </div>
+      <div class="form-group">
+        <label for="title">Email</label>
+        <input type="text" name="email" formControlName="email" />
+      </div>
+      <div class="form-group">
+        <label for="title">Dirección</label>
+        <input type="text" name="address" formControlName="address" />
+      </div>
+      <div class="save">
+        <button type="submit" [disabled]="formContact.invalid">Guardar</button>
+      </div>
+    </form>
   </div>
   <ul class="contacts-list">
     <li *ngFor="let contact of contacts">
