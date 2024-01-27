@@ -24,4 +24,12 @@ export class NotesService {
 
     return this.http.get<any>(this.baseUrl, { headers });
   }
+
+  create(formValue: any) {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.token}`, // Add the authentication header
+    });
+
+    return this.http.post<any>(this.baseUrl, formValue, { headers });
+  }
 }
