@@ -1,1 +1,67 @@
-<p>note works!</p>
+<div class="edit-note">
+  <form [formGroup]="formNote">
+    <div class="form-group">
+      <input
+        type="text"
+        name="title"
+        formControlName="title"
+        placeholder="Título"
+      />
+    </div>
+    <div class="form-group">
+      <textarea
+        name="contentNote"
+        formControlName="contentNote"
+        placeholder="Contenido de la nota"
+        rows="10"
+      ></textarea>
+    </div>
+    <div class="options">
+      <button [disabled]="formNote.invalid" (click)="onSaveNote()">
+        Guardar
+      </button>
+      <button (click)="onDeleteNote()">Eliminar</button>
+      <button (click)="onCancel()">Cancelar</button>
+    </div>
+  </form>
+</div>
+
+<style>
+  .edit-note {
+    border-bottom: 2px solid var(--yellow-color);
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  input,
+  textarea {
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+
+  input {
+    font-size: 1em;
+    font-weight: bold;
+  }
+
+  textarea {
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    scrollbar-width: thin;
+  }
+
+  .options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    margin-bottom: 2em;
+  }
+</style>
