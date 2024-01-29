@@ -4,6 +4,8 @@ import { HomeComponent } from './home.component';
 import { ContactsComponent } from '../contacts';
 import { NotesComponent } from '../notes';
 import { DatesComponent } from '../dates';
+import { NoteComponent } from '../notes/components/note/note.component';
+import { ContactComponent } from '../contacts/components/contact/contact.component';
 
 const routes: Routes = [
   {
@@ -11,8 +13,23 @@ const routes: Routes = [
     component: HomeComponent,
     children: [
       { path: '', pathMatch: 'full', redirectTo: 'contacts' },
-      { path: 'contacts', component: ContactsComponent },
-      { path: 'notes', component: NotesComponent },
+      {
+        path: 'contacts',
+        children: [
+          { path: '', component: ContactsComponent },
+          { path: 'edit/:id', component: ContactComponent },
+        ],
+      },
+      {
+        path: 'notes',
+        children: [
+          { path: '', component: NotesComponent },
+          {
+            path: 'edit/:id',
+            component: NoteComponent,
+          },
+        ],
+      },
       { path: 'dates', component: DatesComponent },
     ],
   },
