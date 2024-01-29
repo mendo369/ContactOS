@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class DatesService {
   private baseUrl: string;
   private token: string;
+
   constructor(
     private strorageService: StorageService,
     private http: HttpClient
@@ -23,5 +24,41 @@ export class DatesService {
     });
 
     return this.http.get<any>(this.baseUrl, { headers });
+  }
+
+  getDate(id: number) {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.token}`, // Add the authentication header
+    });
+
+    return this.http.get<any>(`${this.baseUrl}/${id}`, { headers });
+  }
+
+  create(formValue: any) {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.token}`, // Add the authentication header
+    });
+
+    return this.http.post<any>(this.baseUrl, formValue, { headers });
+  }
+
+  update(formValue: any, dateId: number) {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.token}`, // Add the authentication header
+    });
+
+    return this.http.put<any>(`${this.baseUrl}/${dateId}`, formValue, {
+      headers,
+    });
+  }
+
+  delete(dateId: number) {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.token}`, // Add the authentication header
+    });
+
+    return this.http.delete<any>(`${this.baseUrl}/${dateId}`, {
+      headers,
+    });
   }
 }
