@@ -15,10 +15,10 @@ export class ContactsComponent {
   constructor(private contactsService: ContactsService) {
     this.formContact = new FormGroup({
       name: new FormControl('', Validators.required),
-      lastname: new FormControl('', Validators.required),
+      lastname: new FormControl(''),
       phone: new FormControl('', Validators.required),
-      email: new FormControl('', Validators.required),
-      address: new FormControl('', Validators.required),
+      email: new FormControl(''),
+      address: new FormControl(''),
     });
   }
 
