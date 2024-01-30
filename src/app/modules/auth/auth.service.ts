@@ -10,7 +10,7 @@ export class AuthService {
   private baseUrl: string;
 
   constructor(private http: HttpClient, private router: Router) {
-    this.baseUrl = 'http://localhost:5035/api/Auth';
+    this.baseUrl = 'http://contact-os.somee.com/api/Auth';
   }
 
   register(formValue: any) {
