@@ -7,6 +7,7 @@ import { DatesComponent } from '../dates';
 import { NoteComponent } from '../notes/components/note/note.component';
 import { ContactComponent } from '../contacts/components/contact/contact.component';
 import { DateComponent } from '../dates/components/date/date.component';
+import { authGuard } from '../../guards/auth.guard';
 
 const routes: Routes = [
   {

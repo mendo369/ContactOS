@@ -10,6 +10,7 @@ export class StorageService {
   // Obtener un elemento del Local Storage
   getItem(key: string): any {
     const item = localStorage.getItem(key);
+
     return item ? JSON.parse(item) : null;
   }
 
