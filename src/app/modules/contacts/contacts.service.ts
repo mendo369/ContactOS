@@ -14,7 +14,7 @@ export class ContactsService {
     private strorageService: StorageService,
     private http: HttpClient
   ) {
-    this.baseUrl = 'http://localhost:5035/api/Contacts';
+    this.baseUrl = 'http://contact-os.somee.com/api/Contacts';
     this.token = strorageService.getToken();
   }
 

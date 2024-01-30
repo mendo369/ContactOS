@@ -25,15 +25,15 @@ export class ContactsComponent {
   ngOnInit(): void {
     this.getContacts();
   }
-
-  displayAddContact() {
-    this.addContact = !this.addContact;
-  }
-
+  
   getContacts() {
     this.contactsService
       .getContacts()
       .subscribe((contacts) => (this.contacts = contacts.value));
+  }
+
+  displayAddContact() {
+    this.addContact = !this.addContact;
   }
 
   onSaveContact() {
