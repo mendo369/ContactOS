@@ -6,6 +6,7 @@ import { NotesComponent } from '../notes';
 import { DatesComponent } from '../dates';
 import { NoteComponent } from '../notes/components/note/note.component';
 import { ContactComponent } from '../contacts/components/contact/contact.component';
+import { DateComponent } from '../dates/components/date/date.component';
 
 const routes: Routes = [
   {
@@ -30,7 +31,13 @@ const routes: Routes = [
           },
         ],
       },
-      { path: 'dates', component: DatesComponent },
+      {
+        path: 'dates',
+        children: [
+          { path: '', component: DatesComponent },
+          { path: 'edit/:id', component: DateComponent },
+        ],
+      },
     ],
   },
 ];
