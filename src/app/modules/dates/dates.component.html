@@ -30,6 +30,11 @@
           <p>{{ date.description }}</p>
         </div>
       </div>
+      <div class="edit">
+        <span>
+          <a [routerLink]="'/dates/edit/' + date.id">Editar</a>
+        </span>
+      </div>
     </li>
   </ul>
 </section>
@@ -50,11 +55,18 @@
     gap: 1.5em;
   }
 
-  .date {
+  .date,
+  li {
     display: flex;
     align-items: center;
     gap: 10px;
     min-height: 50px;
+  }
+
+  li {
+    border-bottom: 2px solid var(--yellow-color);
+    justify-content: space-between;
+    padding: 5px;
   }
 
   .date-time {
