@@ -13,7 +13,7 @@ export class NotesService {
     private strorageService: StorageService,
     private http: HttpClient
   ) {
-    this.baseUrl = 'http://localhost:5035/api/Notes';
+    this.baseUrl = 'http://contact-os.somee.com/api/Notes';
     this.token = strorageService.getToken();
   }
 
