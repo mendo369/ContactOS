@@ -14,8 +14,8 @@ export class NoteComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private noteService: NotesService,
-    private router: Router
+    private router: Router,
+    private noteService: NotesService
   ) {
     this.noteId = 0;
 
