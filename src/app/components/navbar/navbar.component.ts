@@ -9,4 +9,8 @@ export class NavbarComponent {
   constructor(private storageService: StorageService) {}
 
   user = this.storageService.getItem('user');
+
+  onLogout() {
+    this.storageService.clearStorage();
+  }
 }
