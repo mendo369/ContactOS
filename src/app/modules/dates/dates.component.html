@@ -1,3 +1,65 @@
-<ul>
-  <li *ngFor="let date of dates">{{ date.title }}</li>
-</ul>
+<section class="dates">
+  <div class="add-date">
+    <button (click)="displayAddDate()">Añadir fecha</button>
+  </div>
+  <div class="new-date" *ngIf="addDate">
+    <form [formGroup]="formDate" (ngSubmit)="onSaveDate()">
+      <div class="form-group">
+        <input type="text" id="title" formControlName="title" />
+      </div>
+      <div class="form-group">
+        <input type="date" id="date" formControlName="date" />
+      </div>
+      <div class="form-group">
+        <textarea id="description" formControlName="description"></textarea>
+      </div>
+
+      <div class="save">
+        <button type="submit" [disabled]="formDate.invalid">Guardar</button>
+      </div>
+    </form>
+  </div>
+  <ul class="dates-list">
+    <li *ngFor="let date of dates">
+      <div class="date">
+        <div class="date-time">
+          <span>{{ date.date | date : "shortDate" }}</span>
+        </div>
+        <div class="date-info">
+          <h2>{{ date.title }}</h2>
+          <p>{{ date.description }}</p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<style>
+  .add-date button {
+    border-radius: 3px;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .dates-list {
+    margin-top: 1em;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+  }
+
+  .date {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 50px;
+  }
+
+  .date-time {
+    height: 100%;
+    background-color: var(--yellow-color);
+    padding: 10px;
+  }
+</style>

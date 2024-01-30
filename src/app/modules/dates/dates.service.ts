@@ -14,7 +14,7 @@ export class DatesService {
     private strorageService: StorageService,
     private http: HttpClient
   ) {
-    this.baseUrl = 'http://localhost:5035/api/ImportantDates';
+    this.baseUrl = 'http://contact-os.somee.com/api/ImportantDates';
     this.token = strorageService.getToken();
   }
 

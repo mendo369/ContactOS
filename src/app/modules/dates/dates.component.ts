@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 import { DatesService } from './dates.service';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-dates',
@@ -8,8 +14,24 @@ import { DatesService } from './dates.service';
 })
 export class DatesComponent {
   dates: any[] = [];
+  addDate = false;
+  formDate: FormGroup;
 
-  constructor(private datesService: DatesService) {}
+  // constructor(private datesService: DatesService) {
+  //   this.formDate = new FormGroup({
+  //     title: new FormControl(''),
+  //     date: new FormControl(''),
+  //     description: new FormControl(''),
+  //   });
+  // }
+
+  constructor(private datesService: DatesService, private fb: FormBuilder) {
+    this.formDate = this.fb.group({
+      title: ['', Validators.required],
+      date: [null, Validators.required],
+      description: [''],
+    });
+  }
 
   ngOnInit(): void {
     this.getDates();
@@ -19,5 +41,17 @@ export class DatesComponent {
     this.datesService
       .getDates()
       .subscribe((dates) => (this.dates = dates.value));
+  }
+
+  displayAddDate() {
+    this.addDate = !this.addDate;
+  }
+
+  onSaveDate() {
+    this.datesService
+      .create(this.formDate.value)
+      .subscribe((res) =>
+        res.status ? (this.addDate = false) : (this.addDate = true)
+      );
   }
 }
