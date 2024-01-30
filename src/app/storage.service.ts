@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class StorageService {
-  constructor() {}
+  constructor(private router: Router) {}
 
   // Obtener un elemento del Local Storage
   getItem(key: string): any {
@@ -31,5 +32,6 @@ export class StorageService {
   // Limpiar todo el Local Storage
   clearStorage(): void {
     localStorage.clear();
+    this.router.navigate(['/auth/login']);
   }
 }
